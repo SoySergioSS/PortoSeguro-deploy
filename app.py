@@ -53,7 +53,7 @@ __main__.SmoothedTargetEncoder = SmoothedTargetEncoder
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
 RUTA_ARTEFACTO = os.path.join(BASE_DIR, "modelo_porto_seguro.pkl")
 DASH_DIR       = os.path.join(BASE_DIR, "dashboard_data")
-RUTA_SHAP_IMG = os.path.join(RUTA_ARTEFACTO, "10_shap_summary.png")
+RUTA_SHAP_IMG = os.path.join(DASH_DIR, "10_shap_summary.png")
 
 PALETA = {"LightGBM": "#1f77b4", "Random Forest": "#2ca02c", "Regresión Logística": "#d62728"}
 
