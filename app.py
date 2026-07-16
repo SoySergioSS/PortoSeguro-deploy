@@ -53,6 +53,7 @@ __main__.SmoothedTargetEncoder = SmoothedTargetEncoder
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
 RUTA_ARTEFACTO = os.path.join(BASE_DIR, "modelo_porto_seguro.pkl")
 DASH_DIR       = os.path.join(BASE_DIR, "dashboard_data")
+RUTA_SHAP_IMG = os.path.join(BASE_DIR, "10_shap_summary.png")
 
 PALETA = {"LightGBM": "#1f77b4", "Random Forest": "#2ca02c", "Regresión Logística": "#d62728"}
 
@@ -180,6 +181,9 @@ with tab_dash:
         fig_imp.update_traces(marker_color="#1f77b4")
         fig_imp.update_layout(height=430)
         st.plotly_chart(fig_imp, width="stretch")
+        if os.path.exists(RUTA_SHAP_IMG):
+            with st.expander("Ver gráfico SHAP original (beeswarm)"):
+                st.image(RUTA_SHAP_IMG, use_container_width=True)
         st.caption("Importancia global por valores de Shapley (|SHAP| medio, normalizado a 100%), "
                    "con dummies One-Hot agregadas a su variable original.")
 
