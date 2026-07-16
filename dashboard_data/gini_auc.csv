@@ -1,0 +1,4 @@
+Modelo,AUC,Gini
+Regresión Logística,0.627,0.254
+Random Forest,0.6324,0.2648
+LightGBM,0.6397,0.2794
